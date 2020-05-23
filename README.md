@@ -3,6 +3,8 @@
 
 ![Horizon in action](https://raw.githubusercontent.com/SimpleMethod/Horizon/master/doc/Horizon.jpg)
 
+# Best engineering thesis at university of technology in faculty of Electrical Engineering, Automatics and Computer Science 🥰
+
 # 🧗‍♂️Main milestones
 
 1. Development of a device for measuring atmospheric conditions.
@@ -34,8 +36,9 @@
 - Used ESP32  programmed in C++. Development of necessary libraries based on technical documentation,
 - Used SIM700e as GSM modem.
 3. IoT server:
--  Based completely on AWS services (AWS Lambda, Amazon DynamoDB, API gateway)
-- Graphical interface based on AngularJS
+- Used microservice architecture,
+- Based completely on AWS services (AWS Lambda, Amazon DynamoDB, API gateway, IAM), Lambda programmed in Node.JS,
+- Graphical interface based on AngularJS running in one page. 
 
 # 🧪 Visualization of weather station PCB 
 ![Visualization of weather station PCB ](https://raw.githubusercontent.com/SimpleMethod/Horizon/master/doc/M_Top.png)
