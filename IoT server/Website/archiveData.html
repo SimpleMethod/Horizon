@@ -1,0 +1,80 @@
+<div class="container-fluid">
+    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+        <h3 class="text-dark mb-0">Ustawienia</h3>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-xl-12">
+            <div class="card shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="text-primary font-weight-bold m-0">Archiwum danych</h6>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="col">
+                                <div class="form-group"><label for="username"><strong>Początkowa data</strong></label><input class="form-control" type="datetime-local" required ng-model="date.from"></div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group"><label for="email"><strong>Końcowa data</strong><br></label><input class="form-control" type="datetime-local" required ng-model="date.to"></div>
+                            </div>
+                        </div>
+                        <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" ng-click="searchData(date)">Wyszukaj</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-if="show">
+        <div class="col-lg-12 col-xl-12">
+            <div class="card shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h6 class="text-primary font-weight-bold m-0">Archiwalne dane</h6>
+                </div>
+                <div class="card-body">
+                    <table id="TableData"  class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th class="th-sm">Data pomiarów
+                            </th>
+                            <th class="th-sm">Temperatura powietrza [°C]
+                            </th>
+                            <th class="th-sm">Wilgotność [%RH]
+                            </th>
+                            <th class="th-sm">Ciśnienie atmosferyczne [Pa]
+                            </th>
+                            <th class="th-sm">Pyły PM 2.5 [μg/m³]
+                            </th>
+                            <th class="th-sm">Pyły PM 10 [μg/m³]
+                            </th>
+                            <th class="th-sm">Kierunek wiatru
+                            </th>
+                            <th class="th-sm">Wilgotność gleby
+                            </th>
+                            <th class="th-sm">Napięcie zasilania [V]
+                            </th>
+                            <th class="th-sm">Obciążenie prądowe [mA]
+                            </th>
+                            <th class="th-sm">Jakość połączenia [RSSI]
+                            </th>
+                        </tr>
+                        </thead>
+                        <tr ng-repeat="x in records">
+                            <td>{{x.measurement_timestamp}}</td>
+                            <td>{{x.air_temperature}}</td>
+                            <td>{{x.air_humidity}}</td>
+                            <td>{{x.atmospheric_pressure}}</td>
+                            <td>{{x.fine_particles25}}</td>
+                            <td>{{x.fine_particles100}}</td>
+                            <td>{{x.wind_direction}}</td>
+                            <td>{{x.soil_moisture}}</td>
+                            <td>{{x.battery_voltage}}</td>
+                            <td>{{x.current_load}}</td>
+                            <td>{{x.rssi}}</td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

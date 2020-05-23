@@ -1,0 +1,126 @@
+                <div class="container-fluid"  ng-init="get_telemetry(this)">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Stacja Pogodowa {{horizon_id}}<br>&nbsp;</h3>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-primary py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>TEMPERATURA</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>{{air_temperature}}<strong>°</strong>C</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-temperature-low fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>wILGOTNOŚĆ</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>{{air_humidity}}%RH</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-water fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-info py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span style="color: rgb(54,185,204);">Ciśnienie</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>{{atmospheric_pressure}}Pa<br></span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-thermometer fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-left-warning py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col mr-2">
+                                            <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Smog</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>{{smog}}<br></span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-smog fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary font-weight-bold m-0">Odczyt danych</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="col"><label class="col-form-label">Temperatura powietrza:{{air_temperature}}°C<br></label></div>
+                                            <div class="col"><label class="col-form-label">Ostatni kierunek wiatru: {{wind_direction}}</label></div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col"><label class="col-form-label">Odczyt PM 2.5:{{fine_particles25}}μg/m³<br></label></div>
+                                            <div class="col"><label class="col-form-label">Odczyt PM 10:{{fine_particles100}}μg/m³<br></label></div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col"><label class="col-form-label">Wilgotność powietrza:{{air_humidity}}%RH</label></div>
+                                            <div class="col"><label class="col-form-label">Wilgotność gleby: {{soil_moisture_text}}</label></div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col"><label class="col-form-label">Ciśnienie atmosferyczne:{{atmospheric_pressure}}Pa</label></div>
+                                            <div class="col"></div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col"><label class="col-form-label"></label></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-xl-12">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary font-weight-bold m-0">Telemetria</h6>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="col"><label class="col-form-label">Aktualnie obciążenie: {{current_load}}mA</label></div>
+                                            <div class="col"><label class="col-form-label">Napięcie zasilania: {{battery_voltage}}V</label></div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="col"><label class="col-form-label">Jakość połączenia:{{rssi}} RSSI</label></div>
+											<!--
+                                            <div class="col"><label class="col-form-label">Stan paneli solarnych:
+                                                <div ng-if="data.solar_charging">
+                                                    Wytwarzanie energii</div>
+                                                <div ng-if="!data.solar_charging">
+                                                    Brak wytwarzanie energii</div>
+                                            </label></div>
+											-->
+                                        </div>
+                                        <div class="form-row">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    angular.element(document).ready(function () {
+                        setInterval(function(){
+                            $scope.save();
+                        }, 120000)
+                    });
+                </script>

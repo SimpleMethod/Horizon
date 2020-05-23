@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="PL" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Horizon Lnik</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script src="./theme.js"></script>
+    <script src="./jquery.easing.js"></script>
+    <script src="./angular.min.js"></script>
+    <script src="./angular-route.js"></script>
+	<script src="./angular-cookies.min.js"></script>
+    <script src="./app.js"></script>
+    <script>
+        angular.element(document).ready(function () {
+            let scope = angular.element(document.getElementById('checkLogin')).scope();
+            scope.$apply(function () {
+            });
+        });
+    </script>
+
+</head>
+
+<body id="page-top">
+<div id="checkLogin" ng-controller="CheckController"></div>
+    <div id="wrapper">
+        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
+            <div class="container-fluid d-flex flex-column p-0">
+                <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+                    <div class="sidebar-brand-icon rotate-n-15"></div>
+                    <div class="sidebar-brand-text mx-3"><span>Horizon</span></div>
+                </a>
+                <hr class="sidebar-divider my-0">
+                <ul class="nav navbar-nav text-light" id="accordionSidebar">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#!archivedata"><i class="icon-satellite"></i><span style="font-weight: bold;">Archiwum wyników</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="d-flex flex-column" id="content-wrapper">
+            <div id="content">
+                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+                    <div class="container-fluid">
+                        <ul class="nav navbar-nav flex-nowrap ml-auto">
+                            <div class="d-none d-sm-block topbar-divider"></div>
+                            <li  ng-controller="LogoutController" class="nav-item dropdown no-arrow" role="presentation"><span class="d-none d-lg-inline mr-2 text-gray-600 small"><button class="btn btn-primary btn-sm" type="submit" ng-click="logout()">Wyloguj sie</button><br></span></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div ng-view></div>
+
+            </div>
+            <footer class="bg-white sticky-footer">
+                <div class="container my-auto">
+                    <div class="text-center my-auto copyright"><span>Copyright © Michał Młodawski 2019</span></div>
+                </div><img class="d-flex d-sm-flex d-md-flex d-lg-flex d-xl-flex align-items-center mx-auto justify-content-sm-center justify-content-md-center justify-content-lg-center justify-content-xl-center visible bounce animated" src="./aws.png"
+                    style="width: 60px;height: auto;"></footer>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="icon-angle-up"></i></a></div>
+
+</body>
+
+</html>

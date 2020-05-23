@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="PL" ng-app="login">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard - Brand</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./jquery.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script src="./theme.js"></script>
+    <script src="./jquery.easing.js"></script>
+    <script src="./angular.min.js"></script>
+    <script src="./angular-route.js"></script>
+    <script src="./angular-cookies.min.js"></script>
+    <script src="./login.js"></script>
+    <script>
+        angular.element(document).ready(function () {
+            let scope = angular.element(document.getElementById('checkLogin')).scope();
+            scope.$apply(function () {
+            });
+        });
+    </script>
+</head>
+
+<body class="bg-gradient-primary">
+<div id="checkLogin" ng-controller="CheckController"></div>
+    <div ng-controller="LoginController" class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex"><img src="render_black_transparent.png" style="width: 405px;height: 283px;margin-left: 60px;"> </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h4 class="text-dark mb-4">Horizon Link</h4>
+                                    </div>
+                                    <form class="user" ng-controller="LoginController">
+                                        <div class="form-group"><input class="form-control form-control-user"
+                                                                       type="text" id="deviceID"
+                                                                       placeholder="ID stacji pogodowej"
+                                                                       name="device_ID" ng-model="auth.device_ID"
+                                                                       required></div>
+                                        <div class="form-group"><input class="form-control form-control-user"
+                                                                       type="password" id="CH" placeholder="Check code"
+                                                                       name="check_code" ng-model="auth.check_code"
+                                                                       required></div>
+                                        <button class="btn btn-primary btn-block text-white btn-user" type="submit"
+                                                ng-click="update_settings(auth)">Zaloguj
+                                        </button>
+                                        <p ng-if="showModal">
+                                            <script>$("#myModal").modal();</script>
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Podano błędny login lub hasło</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
