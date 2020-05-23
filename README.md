@@ -4,6 +4,7 @@
 ![Horizon in action](https://raw.githubusercontent.com/SimpleMethod/Horizon/master/doc/Horizon.jpg)
 
 # 🥰 Best engineering thesis at university of technology in faculty of Electrical Engineering, Automatics and Computer Science 🥰
+https://weaii.tu.kielce.pl/2020/05/15/wyniki-konkursu-prac-dyplomowych-ieee-2020/
 
 # 🧗‍♂️Main milestones
 
