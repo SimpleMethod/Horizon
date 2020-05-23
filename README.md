@@ -3,7 +3,7 @@
 
 ![Horizon in action](https://raw.githubusercontent.com/SimpleMethod/Horizon/master/doc/Horizon.jpg)
 
-# Best engineering thesis at university of technology in faculty of Electrical Engineering, Automatics and Computer Science 🥰
+# 🥰 Best engineering thesis at university of technology in faculty of Electrical Engineering, Automatics and Computer Science 🥰
 
 # 🧗‍♂️Main milestones
 
